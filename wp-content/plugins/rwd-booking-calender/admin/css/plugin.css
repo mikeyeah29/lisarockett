@@ -1,0 +1,217 @@
+:root {
+    --color-one: #fff;
+    --color-two: #d0ee99;
+    --color-three: #678f1c;
+    --color-four: #ffeeea;
+    --color-action: #279d4d;
+    /* --color-two: #d0ee99; */
+    /* 81c8d9
+    055b71 */
+}
+
+.rwd-booking {
+    box-shadow: 0px 0px 3px #33445524;
+    background: var(--color-one);
+}
+
+.rwd-booking h1 {
+    color: var(--color-three);
+    padding: 12px 18px;
+    background: var(--color-two);
+}
+
+.rwd-booking-nav {
+    padding: 0px 18px;
+    background: var(--color-two);
+}
+
+.rwd-booking-nav a {
+    display: inline-block;
+    color: #055b71;
+    padding: 8px 15px;
+}
+.rwd-booking-nav a.is-active {
+    color: var(--color-three);
+    background: var(--color-one);
+    border-radius: 3px 3px 0px 0px;
+    text-decoration: none;
+}
+
+.rwd-booking-body {
+    padding: 12px 18px;
+}
+
+/* Settings */
+
+.rwd-booking-setting__info {
+    font-style: italic;
+    margin-top: 0px;
+    color: #aaaaaa;
+}
+
+.rwd-booking-avail-list {
+    /* background: #345; */
+}
+
+.rwd-booking-avail-item {
+    border-bottom: solid 1px #e3e3e3;
+    /* padding-bottom: 6px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rwd-booking-avail-actions img {
+    width: 16px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+#modal-dialog {
+
+}
+
+.modal-dialog {
+    position: fixed;
+    z-index: 9999;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.modal-dialog.is-open {
+    display: block;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  padding: 20px;
+  margin: auto;
+  width: 80%;
+  max-width: 650px;
+  box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.75);
+  border-radius: 5px;
+  overflow: scroll;
+  max-height: 400px;
+}
+
+.modal-content .modal-close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: #000;
+  font-size: 20px;
+  font-weight: bold;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.rwd-notice {
+  background-color: #edf5f0;
+  padding: 15px 20px;
+  border: 1px solid #3f891d;
+  border-radius: 5px;
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #3f891d;
+}
+
+.rwd-notice.is-error {
+  background-color: #f5eded;
+  color: #e00;
+  border-color: #e00;
+}
+
+.rwd-d-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rwd-btn {
+    background-color: var(--color-action);
+    border: none;
+    color: white;
+    padding: 8px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.rwd-btn--danger {
+    background-color: #d51212;
+}
+
+.rwd-form {
+    padding: 25px;
+    border: 2px solid #CCC;
+    margin: 0 auto;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+.rwd-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.rwd-form input[type=submit] {
+    width: 100%;
+    margin-top: 20px;
+    padding: 8px;
+    background-color: var(--color-action);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.rwd-form input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.rwd-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.rwd-form input[type=time],
+.rwd-form input[type=text],
+.rwd-form input[type=date] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.rwd-form-group {
+    margin-bottom: 20px;
+}
+
+.rwd-form-group .error {
+    color: #d84141;
+    margin-top: 5px;
+    display: inline-block;
+    margin-left: 13px;
+}
+
+.rwd-form-extra { display: none; }
+.rwd-form-extra.is-open { display: block; }

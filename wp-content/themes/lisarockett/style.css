@@ -19,16 +19,20 @@ Tags: one-column, accessibility-ready, custom-colors, custom-menu, custom-logo, 
 @font-face {
 	font-family: 'lr_main';
 	font-weight: 400;
-	src: url('../fonts/waterlily/Waterlily Script.woff2') format('woff2'),
-		url('../fonts/waterlily/Waterlily Script.woff') format('woff'),
-		url('../fonts/waterlily/Waterlily Script.ttf') format('truetype');
+	src: url('fonts/Raden-Ayu-txtxf8/woff/RadenAyuRegular.woff') format('woff'),
+		url('fonts/Raden-Ayu-txtxf8/ttf/RadenAyuRegular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: Tommy;
+  src: url("fonts/made_tommy/MADE TOMMY Thin Outline_PERSONAL USE.otf");
 }
 
 /* base */
 
 h1, h2, h3, h4 {
-	font-family: 'Caveat', cursive;
-    /* font-family: 'lr_main'; */
+	/* font-family: 'Caveat', cursive; */
+    font-family: 'lr_main';
 }
 
 h2 {
@@ -36,11 +40,12 @@ h2 {
 }
 
 p, a, li, div, span, input {
-    font-family: 'Varela Round', sans-serif;
+    /* font-family: 'Varela Round', sans-serif; */
+	font-family: Tommy;
 }
 
-.font-brand { font-family: 'Caveat', cursive; }
-.font-normal { font-family: 'Varela Round', sans-serif; }
+.font-brand { font-family: 'lr_main', cursive; }
+.font-normal { font-family: 'Tommy', sans-serif; }
 
 img {
     width: 100%;
@@ -51,7 +56,8 @@ img {
 }
 
 body {
-    background: url('img/space.png'), linear-gradient(to right, var(--color-one), var(--color-two));
+    /* background: url('img/space.png'), linear-gradient(to right, var(--color-one), var(--color-two)); */
+	background: linear-gradient(to right, var(--color-one), var(--color-two));
 }
 
 header {
@@ -62,9 +68,18 @@ header {
 }
 
 header h1 {
-    margin: 0px;
+	margin: 0px;
     line-height: 1.4em;
-	font-weight: 900;
+    font-weight: 900;
+    padding-top: 12px;
+    padding-bottom: 6px;
+}
+
+header h1 a {
+	text-decoration: none !important;
+	/* font-family: 'Caveat', cursive; */
+	font-family: "lr_main";
+	color: #84408f;
 }
 
 .text-md { font-size: 20px; }
@@ -87,7 +102,7 @@ header h1 {
 .burger span {
     width: 100%;
     height: 4px;
-    background: #456;
+    background: var(--color-two);
     display: block;
     position: absolute;
     left: 0px;
@@ -147,20 +162,42 @@ header h1 {
 /* hero */
 
 .hero {
-    height: 385px;
+	padding: 40px 0px;
+}
+
+.hero,
+.hero-2 {
+    height: auto;
     /* background: url('../img/hero.jpg');
 	background-repeat: no-repeat;
     background-size: cover; */
-	background: linear-gradient(to top, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('img/hero.jpg') no-repeat top center;
+	background: linear-gradient(to top, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('img/dalle7.png') no-repeat top center;
+	background-size: cover;
 	text-align: center;
 }
 
+.hero-2 {
+	padding: 52px 0px 0px 0px;
+	height: 310px;
+}
+
+.hero p,
+.hero-2 p {
+    font-size: 20px;
+	color: #fff;
+}
+
 @media only screen and (min-width: 575px) {
-	.hero {
+	.hero,
+	.hero-2 {
 	    height: 485px;
 	}
-	.hero--sm {
+	.hero--sm,
+	.hero-2--sm {
 		height: 300px;
+	}
+	.hero-2 {
+		padding: 52px 0px 0px 0px;
 	}
 }
 
@@ -184,6 +221,7 @@ header h1 {
 
 .content-section {
 	/* margin: 60px 0px; */
+    padding: 40px 0px;
 }
 
 .content-section--solid {
@@ -195,18 +233,23 @@ header h1 {
 	/* background: #fff; */
     padding: 22px 75px 22px 22px;
     border-radius: 6px;
-    border-left: solid 5px var(--color-two);
+    /* border-left: solid 5px var(--color-two); */
     width: 80%;
 	/* box-shadow: 0px 0px 10px rgb(0 0 0 / 11%); */
 }
 
 .panel h2 {
     margin-bottom: 20px;
+	color: #fff;
+}
+
+.panel p {
+	color: #fff;
 }
 
 .panel-flip {
 	border-left: none;
-	border-right: solid 5px var(--color-one);
+	/* border-right: solid 5px var(--color-one); */
     padding: 22px 22px 22px 75px;
 }
 
@@ -284,10 +327,10 @@ header h1 {
 .contact-btn a {
 	display: block;
 	padding: 12px 24px;
-	background: #2accd2;
-	border-bottom: solid 3px #e9fcfd;
+	background: #ffdb5f;
+	border-bottom: solid 3px #785f0a;
 	text-decoration: none;
-	color: #fff;
+	color: #785f09;
 	font-weight: bold;
 	border-radius: 15px;
 	padding: 12px 46px;
@@ -439,4 +482,9 @@ footer .logo {
 .is-unavailable .lr-calender-hour__time,
 .is-unavailable .lr-calender-hour__status {
 	color: #adadad;
+}
+
+#page-booking .rwd-b-calendar {
+	margin-top: -100px;
+	margin-bottom: 100px;
 }

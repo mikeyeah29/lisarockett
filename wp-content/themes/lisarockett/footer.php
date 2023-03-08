@@ -2,7 +2,7 @@
 <?php if(!is_page('book')) { ?>
 
     <div class="contact-btn">
-        <a href="http://<?php echo home_url(); ?>/book">Book Session</a>
+        <a href="<?php echo home_url(); ?>/book">Book Session</a>
     </div>
 
 <?php } ?>
