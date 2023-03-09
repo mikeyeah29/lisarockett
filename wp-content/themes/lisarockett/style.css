@@ -24,8 +24,8 @@ Tags: one-column, accessibility-ready, custom-colors, custom-menu, custom-logo, 
 }
 
 @font-face {
-  font-family: Tommy;
-  src: url("fonts/made_tommy/MADE TOMMY Thin Outline_PERSONAL USE.otf");
+	font-family: Tommy;
+	src: url("fonts/made_tommy/MADE TOMMY Thin Outline_PERSONAL USE.otf");
 }
 
 /* base */
@@ -79,7 +79,11 @@ header h1 a {
 	text-decoration: none !important;
 	/* font-family: 'Caveat', cursive; */
 	font-family: "lr_main";
-	color: #84408f;
+	color: var(--color-two);
+}
+
+header h1 a:hover {
+	color: var(--color-two);
 }
 
 .text-md { font-size: 20px; }
@@ -122,7 +126,7 @@ header h1 a {
 /* MENU */
 
 .menu {
-    background: #f6eef9;
+    background: var(--color-light);
     width: 100%;
     height: 100%;
     position: fixed;
@@ -151,8 +155,8 @@ header h1 a {
 	background: var(--color-two);
 }
 
-.menu ul li a:hover {
-	color: var(--color-one);
+.menu ul li:hover a {
+	color: #fff;
 }
 
 .menu.is-open {
@@ -171,7 +175,7 @@ header h1 a {
     /* background: url('../img/hero.jpg');
 	background-repeat: no-repeat;
     background-size: cover; */
-	background: linear-gradient(to top, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('img/dalle7.png') no-repeat top center;
+	background: linear-gradient(to top, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('img/dalle7.png') no-repeat center center;
 	background-size: cover;
 	text-align: center;
 }
@@ -225,7 +229,7 @@ header h1 a {
 }
 
 .content-section--solid {
-	background: #efe7f8;
+	background: var(--color-light);
     padding: 44px 0px;
 }
 
@@ -315,7 +319,7 @@ header h1 a {
 
 .testimonial-author {
 	font-size: 12px;
-	color: #8862b3;
+	color: var(--color-one);
 }
 
 .contact-btn {
@@ -347,7 +351,7 @@ footer {
 }
 
 footer .logo {
-	color: #a78fc1;
+	color: var(--color-two);
 	font-size: 32px;
 }
 
