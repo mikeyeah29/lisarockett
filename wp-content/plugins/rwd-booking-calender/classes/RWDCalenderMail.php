@@ -17,7 +17,7 @@ class RWDCalenderMail
             'X-Mailer: PHP/' . phpversion()
         );
 
-        dd($message);
+        // dd($message);
 
         // Send the email and handle errors
         if (!wp_mail($to, $subject, $message, $headers)) {
