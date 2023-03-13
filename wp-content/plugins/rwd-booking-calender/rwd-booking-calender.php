@@ -30,6 +30,7 @@ class RWDBookingCalender
         $files[] = 'RWDBookingScripts.php';
         $files[] = 'RWDCalender.php';
         $files[] = 'RWDEvents.php';
+        $files[] = 'RWDCalenderMail.php';
         // models
         $files[] = 'models/RWD_Event.php';
 

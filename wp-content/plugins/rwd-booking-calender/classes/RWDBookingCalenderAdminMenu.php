@@ -101,12 +101,12 @@ class RWDBookingCalenderAdminMenu
             $dateInView = $_GET['date'];
         }
 
-        $events = RWD_Event::findByWeek($dateInView);
+        // $events = RWD_Event::findByWeek($dateInView);
 
         $this->renderView('calender.php', [
             'message' => $message,
             'error' => $error,
-            'events' => $events,
+            // 'events' => $events,
             'dateInView' => $dateInView
         ]);
     }

@@ -6,6 +6,7 @@ class RWDCalender
     private $startFromHour = 8;
     private $endToHour = 21;
     public $dateInView = 0;
+    public $events = [];
 
     private function getWeekStart()
     {
@@ -78,12 +79,13 @@ class RWDCalender
         if(!$dateInView) {
             // defaults to today
             $this->dateInView = date("Y-m-d h:m:s");
-
-            // dd($this->dateInView);
-
         }else{
             $this->dateInView = $dateInView;
         }
+
+        $res = RWD_Event::findByWeek($this->getWeekStart());
+        $evts = new RWDEvents($res);
+        $this->events = $evts->events;
     }
 }
 

@@ -27,7 +27,9 @@
 
                     // RWD_Helpers::dd($vars['events']);
 
-                    $calEvents = new RWDEvents($vars['events']);
+                    // $calEvents = new RWDEvents($vars['events']);
+
+                    // dd($calEvents);
 
                 ?>
 
@@ -70,7 +72,7 @@
 
                         <?php // $calEvents->render(); ?>
 
-                        <?php foreach ($calEvents->events as $e) { ?>
+                        <?php foreach ($cal->events as $e) { ?>
 
                             <?php if($e->type === 'available') { ?>
 

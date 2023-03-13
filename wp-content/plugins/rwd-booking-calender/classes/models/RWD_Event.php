@@ -63,8 +63,15 @@ class RWD_Event
 
     static public function findByWeek($dateInView)
     {
+        // if(!$dateInView) {
+        //     $dateInView = date("Y-m-d");
+        // }
+
         $dbModel = new RWDCalenderDbModel(Self::$table_name);
         $oneWeekLater = date('Y-m-d', strtotime($dateInView . ' +7 days'));
+
+        // dd($dateInView);
+
         return $dbModel->read("date_from BETWEEN '" . $dateInView . " 00:00:00' AND '" . $oneWeekLater . " 00:00:00'");
     }
 }

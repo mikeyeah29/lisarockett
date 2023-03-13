@@ -9,13 +9,13 @@ if(isset($_GET['date'])) {
 $cal = new RWDCalender($dateInView);
 $hours = $cal->getHours();
 
-// RWD_Helpers::dd($vars['events']);
-
-$events = RWD_Event::findByWeek($dateInView);
-$calEvents = new RWDEvents($events);
-
 if(isset($_POST['make_booking'])) {
-    RWD_Helpers::dd($_POST);
+
+    // RWD_Helpers::dd($_POST);
+
+    RWDCalenderMail::send('mikerockett@live.com', 'Booking Request', 'booking_request', [
+        '{{name}}' => 'Mr Bobby'
+    ]);
 }
 
 ?>
@@ -75,7 +75,7 @@ if(isset($_POST['make_booking'])) {
 
                     <?php // $calEvents->render(); ?>
 
-                    <?php foreach ($calEvents->events as $e) { ?>
+                    <?php foreach ($cal->events as $e) { ?>
 
                         <?php if($e->type === 'available') { ?>
 
@@ -159,9 +159,9 @@ if(isset($_POST['make_booking'])) {
     </div> -->
 
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bookModal">
+    <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bookModal">
       Launch demo modal
-    </button>
+    </button> -->
 
     <!-- Modal -->
     <div class="modal fade" id="bookModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -180,42 +180,43 @@ if(isset($_POST['make_booking'])) {
                   <div class="row">
                       <div class="col-sm-6 mb-3">
                           <!-- Date -->
-                          <label>Date</label>
-                          <input type="text" class="form-control data--date" />
+                          <label>Date <span class="txt-danger">*</span></label>
+                          <input type="date" class="form-control data--date" name="q_date" required="required" />
                       </div>
                       <div class="col-sm-6 mb-3">
                           <!-- Time ( will be one hour lone ) -->
-                          <label>Time</label>
-                          <input type="text" class="form-control data--time" />
+                          <label>Time <span class="txt-danger">*</span></label>
+                          <input type="time" class="form-control data--time" name="q_time" required="required" />
                       </div>
                       <div class="col-sm-6 mb-3">
                           <!-- First Name -->
-                          <label>First Name</label>
-                          <input type="text" class="form-control data--first-name" />
+                          <label>First Name <span class="txt-danger">*</span></label>
+                          <input type="text" class="form-control data--first-name" name="q_first_name" required="required" />
                       </div>
                       <div class="col-sm-6 mb-3">
                           <!-- Last Name -->
-                          <label>Last Name</label>
-                          <input type="text" class="form-control data--last-name" />
+                          <label>Last Name <span class="txt-danger">*</span></label>
+                          <input type="text" class="form-control data--last-name" name="q_last_name" required="required" />
                       </div>
                       <div class="col-sm-6 mb-3">
                           <!-- First Name -->
-                          <label>Email</label>
-                          <input type="text" class="form-control data--first-name" />
+                          <label>Email <span class="txt-danger">*</span></label>
+                          <input type="email" class="form-control data--email" name="q_email" required="required" />
                       </div>
                       <div class="col-sm-6 mb-3">
                           <!-- Last Name -->
                           <label>Phone Number</label>
-                          <input type="text" class="form-control data--last-name" />
+                          <input type="text" class="form-control data--phone" name="q_phone" />
                       </div>
+                  </div>
+
+                  <div class="rwd-modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="submit" class="btn btn-primary">Submit</button>
                   </div>
 
               </form>
 
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Submit</button>
           </div>
         </div>
       </div>
