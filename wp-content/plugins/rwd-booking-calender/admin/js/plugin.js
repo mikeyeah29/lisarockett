@@ -20,19 +20,30 @@ jQuery( document ).ready(function() {
         // fill edit data
         if(data.type === 'available') {
             jQuery('.data-edit-event--h2').text('Edit Available Slot');
-        }else{
+            jQuery('#edit-event-submit').val('Update');
+        }else if(data.type === 'booked') {
             jQuery('.data-edit-event--h2').text('Edit Booking');
+            jQuery('#edit-event-submit').val('Update');
+        }else {
+            jQuery('.data-edit-event--h2').text('Pending booking');
+            jQuery('#edit-event-submit').val('Confirm');
         }
 
         jQuery('.data-edit-event--id').val(data.id);
-        jQuery('.data-edit-event--type').val(data.type);
+
+        if(data.type === 'pending') {
+            jQuery('.data-edit-event--type').val('booked');
+        }else{
+            jQuery('.data-edit-event--type').val(data.type);
+        }
+
         jQuery('.data-edit-event--date').val(new Date(data.date).toISOString().substring(0, 10));
         jQuery('.data-edit-event--start-time').val(data.start_time);
         jQuery('.data-edit-event--end-time').val(data.end_time);
 
         if(data.type === 'available') {
             jQuery('#lr-edit-event .rwd-form-extra').removeClass('is-open');
-        }else{
+        }else {
             jQuery('#lr-edit-event .rwd-form-extra').addClass('is-open');
             jQuery('.data-edit-event--first-name').val(data.first_name);
             jQuery('.data-edit-event--last-name').val(data.last_name);

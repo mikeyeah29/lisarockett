@@ -2,23 +2,7 @@
 
 <section>
 
-    <div class="hero d-flex justify-content-center flex-column">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="hero-text d-flex flex-column justify-content-center">
-                        <h1>Mediumship &amp; Guidance</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="row d-flex justify-content-center">
-                <div class="col-lg-8">
-                    <p>I'm an experienced spiritual medium here to help you on your spiritual journey and provide insight and clarity.</p>
-                    <p>I believe that spiritual connection can be a powerful source of healing and growth. I hope I can help you find</br> the answers and peace of mind you seek.</p>
-                </div>
-            </div>
-        </div>
-    </div>
+    <?php get_template_part('template-parts/hero'); ?>
 
 </section>
 

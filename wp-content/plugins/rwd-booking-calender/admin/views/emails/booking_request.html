@@ -1,69 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Booking Confirmation</title>
-	<style>
-		body {
-			font-family: Arial, sans-serif;
-			font-size: 16px;
-			line-height: 1.5;
-			margin: 0;
-			padding: 0;
-		}
-		header {
-			background-color: #f9f9f9;
-			padding: 20px;
-		}
-		h1 {
-			margin: 0;
-			font-size: 28px;
-			font-weight: normal;
-			text-align: center;
-		}
-		main {
-			max-width: 600px;
-			margin: 0 auto;
-			padding: 20px;
-			background-color: #ffffff;
-			box-shadow: 0 0 5px rgba(0,0,0,0.1);
-		}
-		ul {
-			list-style: none;
-			margin: 0;
-			padding: 0;
-		}
-		li {
-			margin-bottom: 10px;
-		}
-		p:last-child {
-			margin-bottom: 0;
-		}
-	</style>
-</head>
-<body>
-	<header>
-		<h1>Booking Confirmation</h1>
-	</header>
-	<main>
-		<p>Dear {{name}},</p>
-		<p>We are delighted to confirm your booking with us. The details of your booking are as follows:</p>
-		<ul>
-			<li>Booking Reference Number: [Booking Reference Number]</li>
-			<li>Booking Date: [Booking Date]</li>
-			<li>Check-in Date: [Check-in Date]</li>
-			<li>Check-out Date: [Check-out Date]</li>
-			<li>Room Type: [Room Type]</li>
-			<li>Number of Rooms: [Number of Rooms]</li>
-			<li>Number of Guests: [Number of Guests]</li>
-			<li>Special Requests: [Special Requests]</li>
-			<li>Total Price: [Total Price]</li>
-		</ul>
-		<p>If you have any questions or concerns, please do not hesitate to contact us.</p>
-		<p>Thank you for choosing to stay with us. We look forward to welcoming you.</p>
-		<p>Best regards,</p>
-		<p>[Hotel Name] Team</p>
-	</main>
-</body>
+<html>
+  <head>
+    <title>My HTML Email</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+  </head>
+  <body style="background-color: #f6f6f6; font-family: Arial, sans-serif;">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+		<tr>
+			<td align="center" bgcolor="#eaeaea" style="padding: 20px 0;">
+				<h1 style="color: #3db76e;">Lisa Rockett</h1>
+			</td>
+		</tr>
+      <tr>
+        <td style="padding: 20px;">
+			<h1 style="color: #222222;">Website Booking Request</h1>
+			<p style="color: #555555;">You've had a booking request through your website.</p>
+			<p style="color: #555555;"><b>Name: </b>{{name}}</p>
+			<p style="color: #555555;"><b>Date: </b>{{date}}</p>
+			<p style="color: #555555;"><b>Time: </b>{{time}}</p>
+			<p style="color: #555555;"><b>email: </b>{{email}}</p>
+			<p style="color: #555555;"><b>phone: </b>{{phone}}</p>
+	  		<br/>
+
+			<a href="http://lisarockett.com/wp-admin/admin.php?page=rwd-booking-calender-view">Click here to manage booking</a>
+
+        </td>
+      </tr>
+    </table>
+  </body>
 </html>

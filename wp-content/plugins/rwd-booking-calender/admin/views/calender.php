@@ -1,8 +1,10 @@
 <div class="wrap">
 
+    <h1></h1>
+
     <div class="rwd-booking">
 
-        <h1>Booking Calender</h1>
+        <p class="h1">Booking Calender</p>
 
         <?php include('inc/_header.php'); ?>
 
@@ -80,9 +82,16 @@
                                     <p>Available between <?php echo $e->fromFormatted(); ?> to <?php echo $e->toFormatted(); ?></p>
                                 </div>
 
-                            <?php }else{ ?>
+                            <?php }else if($e->type === 'booked'){ ?>
 
                                 <div class="rwd-b-event rwd-b-event--booking" style="<?php echo $e->getPositionStyle(); ?>" data-json="<?php echo $e->getJson(); ?>">
+                                    <p><?php echo $e->first_name . ' ' . $e->last_name; ?></p>
+                                    <p><?php echo $e->fromFormatted(); ?> to <?php echo $e->toFormatted(); ?></p>
+                                </div>
+
+                            <?php }else if($e->type === 'pending'){ ?>
+
+                                <div class="rwd-b-event rwd-b-event--pending" style="<?php echo $e->getPositionStyle(); ?>" data-json="<?php echo $e->getJson(); ?>">
                                     <p><?php echo $e->first_name . ' ' . $e->last_name; ?></p>
                                     <p><?php echo $e->fromFormatted(); ?> to <?php echo $e->toFormatted(); ?></p>
                                 </div>

@@ -13,14 +13,48 @@ if(isset($_POST['make_booking'])) {
 
     // RWD_Helpers::dd($_POST);
 
-    RWDCalenderMail::send('mikerockett@live.com', 'Booking Request', 'booking_request', [
-        '{{name}}' => 'Mr Bobby'
-    ]);
+    // Create event with type pending and all the details
+
+    $data = RWD_Helpers::getPost();
+
+    $eventObj = [
+        'type' => 'pending',
+        'date' => $data['q_date'],
+        'date_from' => $data['q_time'],
+        'first_name' => $data['q_first_name'],
+        'last_name' => $data['q_last_name'],
+        'email' => $data['q_email'],
+        'phone' => $data['q_phone']
+    ];
+
+    RWD_Event::create($eventObj);
+
+    try {
+
+        // Call the function you want to execute within the try block
+        RWDCalenderMail::send('mikerockett@live.com', 'Booking Request', 'booking_request', [
+            '{{name}}' => $data['q_first_name'] . ' ' . $data['q_last_name'],
+            '{{date}}' => $data['q_date'],
+            '{{time}}' => $data['q_time'],
+            '{{email}}' => $data['q_email'],
+            '{{phone}}' => $data['q_phone']
+        ]);
+
+    } catch (Exception $e) {
+        // Handle any exceptions that may have been thrown
+        echo 'Caught exception: ',  $e->getMessage(), "\n";
+        die();
+    }
+
+    wp_redirect( home_url( '/thankyou' ) );
+
 }
 
 ?>
 
 <?php get_header(); ?>
+
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 <section id="page-booking">
 
@@ -29,8 +63,8 @@ if(isset($_POST['make_booking'])) {
             <div class="row">
                 <div class="col-12">
                     <div class="hero-text">
-                        <h1>Book</h1>
-                        <p>Click on an available slot below</p>
+                        <h1><?php the_title(); ?></h1>
+                        <?php the_content(); ?>
                     </div>
                 </div>
             </div>
@@ -223,5 +257,10 @@ if(isset($_POST['make_booking'])) {
     </div>
 
 </section>
+
+<?php endwhile; else : ?>
+	<p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
+<?php endif; ?>
+
 
 <?php get_footer(); ?>

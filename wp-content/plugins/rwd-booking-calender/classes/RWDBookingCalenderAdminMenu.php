@@ -14,6 +14,7 @@ class RWDBookingCalenderAdminMenu
         $message = $vars['message'];
         $error = $vars['error'];
         // $data = (isset($vars['data']) ? $vars['data'] : [] );
+
         include_once( plugin_dir_path( __FILE__ ) . '../admin/views/' . $view );
     }
 
@@ -22,16 +23,79 @@ class RWDBookingCalenderAdminMenu
         $message = '';
         $error = false;
 
-        if (isset($_POST['rwd_booking_options'])) {
-            // ReapitOptions::update();
-            $message = 'Booking Calender options updated';
+        if(isset($_POST['approve_booking'])) {
+            // RWD_Event::approve();
+            $message = 'Booking confirmed';
+            // TODO: send email to client
         }
 
-        // $options = ReapitOptions::get();
+        if(isset($_POST['delete_booking'])) {
 
-        $page = (isset($_GET['page']) ? $_GET['page'] : '');
+            $id = $_POST['delete_booking'];
+            RWD_Event::delete($id);
 
-        include_once( plugin_dir_path( __FILE__ ) . '../admin/views/settings.php' );
+            $message = 'Booking Deleted';
+
+        }
+
+        $this->renderView('bookings.php', [
+            'message' => $message,
+            'error' => $error,
+            'events' => RWD_Event::findFutureBookings()
+        ]);
+    }
+
+    public function submenu_edit_view()
+    {
+        $message = '';
+        $error = false;
+
+        if(isset($_POST['update_booking'])) {
+
+            $data = RWD_Helpers::getPost();
+            $bookingId = $data['update_booking'];
+
+            // validate date_from and date_to
+            if (strtotime($data['date_from']) > strtotime($data['date_to'])) {
+                $message = 'The start date must be before the end date.';
+                $error = true;
+            }
+
+            // $type = 'booked';
+            //
+            // if(isset($data['confirm_booking'])) {
+            //     $type = 'booked';
+            // }
+
+            if (!$error) {
+                RWD_Event::update([
+                    'date' => $data['date'],
+                    'date_from' => $data['date_from'],
+                    'date_to' => $data['date_to'],
+                    'type' => 'booked',
+                    'first_name' => $data['first_name'],
+                    'last_name' => $data['last_name'],
+                    'email' => $data['email'],
+                    'phone' => $data['phone'],
+                    'description' => $data['description']
+                ], $bookingId);
+
+                $message = 'Booking updated';
+            }
+
+        }
+
+        if(!isset($_GET['booking-id'])) {
+            dd('No booking id');
+        }
+
+        $booking = RWD_Event::findById($_GET['booking-id']);
+
+        $this->renderView('edit.php', [
+            'message' => $message,
+            'error' => $error,
+            'booking' => $booking
+        ]);
     }
 
     public function submenu_calender_view()
@@ -114,7 +178,7 @@ class RWDBookingCalenderAdminMenu
     public function admin_menu()
     {
         add_menu_page(
-            'Booking Calender Settings', // title
+            'Booking Calender Bookings', // title
             'Booking Calender', // menu title
             $this->permissions, // permissions
             $this->slug, // slug
@@ -129,6 +193,15 @@ class RWDBookingCalenderAdminMenu
             $this->permissions,
             'rwd-booking-calender-view', // slug
             array($this, 'submenu_calender_view')
+        );
+
+        add_submenu_page(
+            $this->slug, // parent slug
+            'Edit Booking', // title
+            '', // menu title
+            $this->permissions,
+            'rwd-booking-calender-edit', // slug
+            array($this, 'submenu_edit_view')
         );
         // add_submenu_page(
         //     $this->slug, // parent slug

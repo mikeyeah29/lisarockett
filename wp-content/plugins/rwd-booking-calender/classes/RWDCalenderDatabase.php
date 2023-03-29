@@ -12,7 +12,7 @@ class RWDCalenderDatabase
     		id int AUTO_INCREMENT PRIMARY KEY,
     		date_from DATETIME NOT NULL,
     		date_to DATETIME NOT NULL,
-            type enum('booked', 'available') NOT NULL,
+            type enum('booked', 'available', 'pending') NOT NULL,
             first_name varchar(30),
             last_name varchar(30),
             email varchar(100),
