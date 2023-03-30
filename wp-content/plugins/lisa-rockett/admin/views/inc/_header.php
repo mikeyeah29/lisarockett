@@ -3,7 +3,7 @@
     <h1>Lisa Rockett Settings</h1>
 
     <ul>
-        <li class="<?php echo ( $page === 'wa-settings' ? 'is-active' : '' ); ?>">
+        <li class="<?php echo ( $page === 'lr-settings' ? 'is-active' : '' ); ?>">
             <a href="?page=wa-settings">General</a>
         </li>
         <!-- <li class="<?php // echo ( $page === 'wa-footer' ? 'is-active' : '' ); ?>">
