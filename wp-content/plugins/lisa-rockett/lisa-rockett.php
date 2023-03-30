@@ -36,8 +36,8 @@ class LisaRockett
 
     public function activate_plugin()
     {
-        $dbs = new LR_Database();
-        $dbs->createTables();
+        // $dbs = new LR_Database();
+        // $dbs->createTables();
     }
 
     public function __construct()

@@ -1,7 +1,7 @@
 :root {
-    --color-one: #312566;
-    --color-two: #28a656;
-    --color-body: #fff;
+    --lr-color-one: #3db76e;
+    --lr-color-two: #28a656;
+    --lr-color-body: #fff;
     --color-error: red;
     --box-padding: 20px;
 }
@@ -16,7 +16,7 @@
 /* Header */
 
 .rwd-header {
-    background: var(--color-one);
+    background: var(--lr-color-one);
     border-radius: 5px 5px 0px 0px;
     padding: var(--box-padding) var(--box-padding) 0px var(--box-padding);
     color: #fff;
@@ -44,17 +44,17 @@
 }
 
 .rwd-header ul li.is-active {
-    background: var(--color-body);
+    background: var(--lr-color-body);
 }
 
 .rwd-header ul li.is-active a {
-    color: var(--color-two);
+    color: var(--lr-color-two);
     font-weight: bold;
 }
 
 .rwd-body {
     /* background: var(--color-seymours-two); */
-    background: var(--color-body);
+    background: var(--lr-color-body);
     padding: var(--box-padding);
     padding-top: 24px;
     border-radius: 0px 0px 5px 5px;
@@ -67,9 +67,9 @@
     margin-right: 20px;
     background: #fff;
     padding: var(--box-padding);
-    border: 1px solid var(--color-one);
+    border: 1px solid var(--lr-color-one);
     box-shadow: 0 1px 1px -1px rgb(0 0 0 / 10%);
-    border-left: solid 5px var(--color-one);
+    border-left: solid 5px var(--lr-color-one);
 }
 
 .rwd-notice.is-error {
@@ -86,6 +86,7 @@
 
 .rwd-form {
     display: inline-block;
+    width: 400px;
 }
 
 .rwd-form-group {
@@ -100,7 +101,7 @@
 }
 
 .rwd-btn {
-    background: var(--color-two);
+    background: var(--lr-color-two);
     color: #fff;
     border: none;
     font-size: 18px;

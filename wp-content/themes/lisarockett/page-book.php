@@ -31,8 +31,12 @@ if(isset($_POST['make_booking'])) {
 
     try {
 
+        $to = LR_Options::get('ADMIN_EMAIL');
+
+        dd($to);
+
         // Call the function you want to execute within the try block
-        RWDCalenderMail::send('mikerockett@live.com', 'Booking Request', 'booking_request', [
+        RWDCalenderMail::send($to, 'Booking Request', 'booking_request', [
             '{{name}}' => $data['q_first_name'] . ' ' . $data['q_last_name'],
             '{{date}}' => $data['q_date'],
             '{{time}}' => $data['q_time'],

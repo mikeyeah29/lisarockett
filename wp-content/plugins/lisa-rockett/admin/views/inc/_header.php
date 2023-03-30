@@ -1,14 +1,14 @@
 <div class="rwd-header">
 
-    <h1>Wessex Astrologer Settings</h1>
+    <h1>Lisa Rockett Settings</h1>
 
     <ul>
         <li class="<?php echo ( $page === 'wa-settings' ? 'is-active' : '' ); ?>">
             <a href="?page=wa-settings">General</a>
         </li>
-        <li class="<?php echo ( $page === 'wa-footer' ? 'is-active' : '' ); ?>">
+        <!-- <li class="<?php // echo ( $page === 'wa-footer' ? 'is-active' : '' ); ?>">
             <a href="?page=wa-footer">Footer</a>
-        </li>
+        </li> -->
     </ul>
 
 </div>

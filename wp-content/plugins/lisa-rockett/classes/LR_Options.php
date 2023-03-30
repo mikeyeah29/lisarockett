@@ -5,9 +5,8 @@ class LR_Options
     public static function get($option_name = false)
     {
         $options = get_option('lr_options', [
-            'PHONE_UK' => '',
-            'PHONE_INTERNATIONAL' => '',
-            'EMAIL' => '',
+            'ADMIN_EMAIL' => '',
+            'PHONE' => 'PHONE'
         ]);
 
         if($option_name) {
@@ -21,9 +20,8 @@ class LR_Options
     public static function update()
     {
         update_option('lr_options', [
-            'PHONE_UK' => ( isset($_POST['wa-phone-uk']) ? $_POST['wa-phone-uk'] : '' ),
-            'PHONE_INTERNATIONAL' => ( isset($_POST['wa-phone-international']) ? $_POST['wa-phone-international'] : '' ),
-            'EMAIL' => ( isset($_POST['wa-email']) ? $_POST['wa-email'] : '' )
+            'ADMIN_EMAIL' => ( isset($_POST['lr-email']) ? $_POST['lr-email'] : '' ),
+            'PHONE' => ( isset($_POST['lr-phone']) ? $_POST['lr-phone'] : '' )
         ]);
     }
 }
