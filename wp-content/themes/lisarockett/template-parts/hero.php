@@ -12,6 +12,10 @@
 
                 <?php the_content(); ?>
 
+                <div class="contact-btn">
+                    <a href="<?php echo home_url(); ?>/book">Book Session</a>
+                </div>
+
             </div>
         </div>
     </div>

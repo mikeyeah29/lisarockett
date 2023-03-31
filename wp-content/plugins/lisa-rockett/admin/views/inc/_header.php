@@ -4,11 +4,11 @@
 
     <ul>
         <li class="<?php echo ( $page === 'lr-settings' ? 'is-active' : '' ); ?>">
-            <a href="?page=wa-settings">General</a>
+            <a href="?page=lr-settings">General</a>
         </li>
-        <!-- <li class="<?php // echo ( $page === 'wa-footer' ? 'is-active' : '' ); ?>">
-            <a href="?page=wa-footer">Footer</a>
-        </li> -->
+        <li class="<?php echo ( $page === 'lr-testamonials' ? 'is-active' : '' ); ?>">
+            <a href="?page=lr-testamonials">Testamonials</a>
+        </li>
     </ul>
 
 </div>

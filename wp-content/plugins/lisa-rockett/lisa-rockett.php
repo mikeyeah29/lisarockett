@@ -28,6 +28,7 @@ class LisaRockett
         $files[] = 'LR_Scripts.php';
         // $files[] = 'LR_CPT.php';
         $files[] = 'LR_Options.php';
+        $files[] = 'LR_Testamonials.php';
 
         foreach ($files as $file) {
             require_once plugin_dir_path( dirname( __FILE__ ) ) . $this->plugin_name . '/classes/' . $file;
