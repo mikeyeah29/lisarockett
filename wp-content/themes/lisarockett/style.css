@@ -173,6 +173,16 @@ header h1 a:hover {
     padding: 90px 0px;
 }
 
+.hero a,
+.hero-2 a {
+	color: #c2ffd2;
+}
+
+.hero a:hover,
+.hero-2 a:hover {
+	color: #78f398;
+}
+
 .hero-2 {
     padding: 90px 0px;
 }
@@ -533,4 +543,21 @@ footer .logo {
 
 .slick-dots li.slick-active button {
 	background-color: #6fd2d2;
+}
+
+.contact-info {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.contact-info li {
+	margin-bottom: 10px;
+}
+.contact-info strong {
+	display: inline-block;
+	width: 80px;
+}
+.contact-info a {
+	color: #3B5998;
+	text-decoration: none;
 }
