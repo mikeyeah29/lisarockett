@@ -12,9 +12,11 @@
 
                 <?php the_content(); ?>
 
-                <div class="contact-btn">
-                    <a href="<?php echo home_url(); ?>/book">Book Session</a>
-                </div>
+                <?php if(is_front_page()) { ?>
+                    <div class="contact-btn">
+                        <a href="<?php echo home_url(); ?>/book">Book Session</a>
+                    </div>
+                <?php } ?>
 
             </div>
         </div>
