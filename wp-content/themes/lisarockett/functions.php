@@ -1,5 +1,14 @@
 <?php
 
+// include('classes/LR_WalkerNavMenu.php');
+
+function lr_theme_menus() {
+    register_nav_menus( array(
+        'primary' => __( 'Primary Menu' )
+    ) );
+}
+add_action( 'init', 'lr_theme_menus' );
+
 function dd($var)
 {
     echo '<pre>';

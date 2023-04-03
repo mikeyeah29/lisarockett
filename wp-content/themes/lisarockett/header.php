@@ -41,22 +41,15 @@
             </div>
         </header>
 
-        <div class="menu">
-            <ul>
-                <li>
-                    <div class="container">
-                        <a href="/">Home</a>
-                    </div>
-                </li>
-                <li>
-                    <div class="container">
-                        <a href="/pages/events">Events</a>
-                    </div>
-                </li>
-                <li>
-                    <div class="container">
-                        <a href="/pages/book">Book</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
+        <?php
+
+            // Define the arguments for the menu
+            $menu_args = array(
+                'menu' => 'main-menu', // Replace 'main-menu' with the slug or name of your menu
+                'theme_location' => 'primary'
+            );
+
+            // Output the menu
+            wp_nav_menu( $menu_args );
+
+        ?>
