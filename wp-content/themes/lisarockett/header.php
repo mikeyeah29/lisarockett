@@ -41,15 +41,19 @@
             </div>
         </header>
 
-        <?php
+        <div class="menu">
+            <?php
 
-            // Define the arguments for the menu
-            $menu_args = array(
-                'menu' => 'main-menu', // Replace 'main-menu' with the slug or name of your menu
-                'theme_location' => 'primary'
-            );
+                // Define the arguments for the menu
+                $menu_args = array(
+                    'menu' => 'main-menu', // Replace 'main-menu' with the slug or name of your menu
+                    'theme_location' => 'primary',
+                    'container_class' => 'menu', // Add wrapper class for the menu
+                    'menu_class' => '' // Remove class from ul element
+                );
 
-            // Output the menu
-            wp_nav_menu( $menu_args );
+                // Output the menu
+                wp_nav_menu( $menu_args );
 
-        ?>
+            ?>
+        </div>
