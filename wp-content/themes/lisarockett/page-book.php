@@ -217,12 +217,14 @@ if(isset($_POST['make_booking'])) {
                       <div class="col-sm-6 mb-3">
                           <!-- Date -->
                           <label>Date <span class="txt-danger">*</span></label>
-                          <input type="date" class="form-control data--date" name="q_date" required="required" />
+                          <input type="hidden" class="form-control data--date" name="q_date" required="required" />
+                          <p id="data--date"></p>
                       </div>
                       <div class="col-sm-6 mb-3">
                           <!-- Time ( will be one hour lone ) -->
                           <label>Time <span class="txt-danger">*</span></label>
                           <input type="time" class="form-control data--time" name="q_time" required="required" />
+                          <p id="time-msg"></p>
                       </div>
                       <div class="col-sm-6 mb-3">
                           <!-- First Name -->

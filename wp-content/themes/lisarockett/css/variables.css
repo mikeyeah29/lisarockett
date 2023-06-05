@@ -1,7 +1,17 @@
 :root {
-    /* --color-one: #bf9aeb;
-    --color-two: #84408f; */
-    --color-one: #23bebf;
+    --color-one: #bf9aeb;
+    --color-two: #84408f;
+    /* --color-one: #23bebf;
     --color-two: #3db76e;
-    --color-light: #e7f8f8;
+    --color-light: #e7f8f8; */
+    /* --color-light: #e7f8f8; */
+    --color-light: #f8f7e7;
+    --color-body: #f6fafa;
+    --color-header-bg: var(--color-two);
+    --color-header-text: #fff;
+    /* --color-top-nav-bg: #f1deff; */
+    --color-top-nav-bg: #fff;
+    --color-top-nav-text: var(--color-two);
+
+    --color-text-light: #fff;
 }

@@ -6,28 +6,34 @@
 
 </section>
 
+<section class="content-section">
+    <div class="container">
+        <?php the_content(); ?>
+    </div>
+</section>
+
 <?php if(get_field('content_section_1')) { ?>
-    <section class="content-section">
+    <!-- <section class="content-section">
         <div class="container container-narrow">
             <div class="row">
 
                 <div class="d-md-flex align-items-center flex-sm-row-reverse">
                     <div class="blob-img">
-                        <img src="<?php bloginfo('template_url'); ?>/img/avatar.png" />
+                        <img src="<?php// bloginfo('template_url'); ?>/img/avatar.png" />
                     </div>
                     <div class="panel">
-                        <?php the_field('content_section_1'); ?>
+                        <?php //the_field('content_section_1'); ?>
                     </div>
                 </div>
 
             </div>
 
         </div>
-    </section>
+    </section> -->
 <?php } ?>
 
 <?php if(get_field('content_section_2')) { ?>
-    <section class="content-section">
+    <!-- <section class="content-section">
         <div class="container container-narrow">
             <div class="row">
 
@@ -35,10 +41,10 @@
 
                     <div class="d-md-flex align-items-center">
                         <div class="blob-img blob-img-flip">
-                            <img src="<?php bloginfo('template_url'); ?>/img/avatar.png" />
+                            <img src="<?php// bloginfo('template_url'); ?>/img/avatar.png" />
                         </div>
                         <div class="panel panel-flip">
-                            <?php the_field('content_section_2'); ?>
+                            <?php //the_field('content_section_2'); ?>
                         </div>
                     </div>
 
@@ -46,13 +52,13 @@
 
             </div>
         </div>
-    </section>
+    </section> -->
 <?php } ?>
 
 <section class="content-section content-section--solid">
-    <div class="container container-narrow">
+    <div class="container">
         <div class="testimonals">
-            <h2 class="mb-4">Testimonials</h2>
+            <h2 class="mb-4 txt-light">Testimonials</h2>
 
             <?php $testmionials = LR_Testamonials::get(); ?>
 
