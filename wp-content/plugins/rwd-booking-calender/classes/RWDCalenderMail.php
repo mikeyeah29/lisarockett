@@ -19,9 +19,10 @@ class RWDCalenderMail
 
     static public function send($to, $subject, $templateName, $placeholders = [])
     {
+        $to = trim($to);
+
         $html_template = plugin_dir_path( __FILE__ ) . '../admin/views/emails/' . $templateName . '.html';
         $message = file_get_contents($html_template);
-
         // Replace placeholders in the template with actual values
         $message = strtr($message, $placeholders);
 
@@ -32,6 +33,7 @@ class RWDCalenderMail
             // 'X-Mailer: PHP/' . phpversion()
         );
 
+        // SWPFD_SaveData::saveMail($to, $subject, htmlspecialchars($message));
         $res = wp_mail($to, $subject, $message, $headers);
 
         if (!$res) {
@@ -42,9 +44,6 @@ class RWDCalenderMail
             $error_message = 'Failed to send email to ' . $to;
             trigger_error($error_message, E_USER_ERROR);
         }
-
-        dd($message);
-
     }
 }
 
