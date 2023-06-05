@@ -283,13 +283,13 @@ header h1 a:hover {
 	margin-bottom: 40px;
 }
 
-.content-section h2::after {
+/* .content-section h2::after {
 
 	content: url('img/feather-solid.svg');
 	width: 20px;
 	height: 20px;
 	display: block;
-}
+} */
 
 .content-section p {
 	color: var(--color-text);
