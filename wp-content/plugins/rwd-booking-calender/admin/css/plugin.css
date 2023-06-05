@@ -1,8 +1,8 @@
 :root {
-    --color-one: #fff;
+    /* --color-one: #fff;
     --color-two: #d0ee99;
     --color-three: #678f1c;
-    --color-four: #ffeeea;
+    --color-four: #ffeeea; */
     --color-action: #279d4d;
     /* --color-two: #d0ee99; */
     /* 81c8d9
@@ -34,7 +34,7 @@
 }
 .rwd-booking-nav a.is-active {
     color: var(--color-three);
-    background: var(--color-one);
+    background: #fff;
     border-radius: 3px 3px 0px 0px;
     text-decoration: none;
 }
@@ -42,6 +42,7 @@
 .rwd-booking-body {
     padding: 12px 18px;
     overflow: scroll;
+    background: #fff;
 }
 
 /* Settings */

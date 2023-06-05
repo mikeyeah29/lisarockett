@@ -175,6 +175,22 @@ class RWDBookingCalenderAdminMenu
         ]);
     }
 
+    public function submenu_email_templates_view()
+    {
+        $message = '';
+        $error = false;
+
+        $this->renderView('email-templates.php', [
+            'message' => $message,
+            'error' => $error
+        ]);
+    }
+
+    public function submenu_email_view()
+    {
+        include_once( plugin_dir_path( __FILE__ ) . '../admin/views/view-email.php' );
+    }
+
     public function admin_menu()
     {
         add_menu_page(
@@ -193,6 +209,22 @@ class RWDBookingCalenderAdminMenu
             $this->permissions,
             'rwd-booking-calender-view', // slug
             array($this, 'submenu_calender_view')
+        );
+        add_submenu_page(
+            $this->slug, // parent slug
+            'Email Templates', // title
+            'Email Templates', // menu title
+            $this->permissions,
+            'rwd-booking-email-templates', // slug
+            array($this, 'submenu_email_templates_view')
+        );
+        add_submenu_page(
+            null, // parent slug
+            'Email', // title
+            null, // menu title
+            $this->permissions,
+            'rwd-booking-email', // slug
+            array($this, 'submenu_email_view')
         );
 
         add_submenu_page(

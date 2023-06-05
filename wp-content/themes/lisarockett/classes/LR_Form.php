@@ -98,7 +98,7 @@
 			}else if($this->type == 'textarea'){
 
 				$this->renderLabel();
-				echo '<textarea class="form-control ' . $this->invalidCssName() . '" name="' . $this->name . '">' . $this->value . '</textarea>';
+				echo '<textarea rows="6" class="form-control ' . $this->invalidCssName() . '" name="' . $this->name . '">' . $this->value . '</textarea>';
 
 			}else{
 

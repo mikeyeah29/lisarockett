@@ -81,7 +81,9 @@
                             </div>
                         </div>
                         <div class="col text-end">
-                            <i class="fab fa-facebook-f"></i>
+                            <a href="https://facebook.com/lisa.rockett.50">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
