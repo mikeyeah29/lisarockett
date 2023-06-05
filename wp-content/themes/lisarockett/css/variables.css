@@ -7,8 +7,11 @@
     /* --color-light: #e7f8f8; */
     --color-light: #f8f7e7;
     --color-body: #f6fafa;
+
+    /* USES */
     --color-header-bg: var(--color-two);
     --color-header-text: #fff;
+    --color-header-text-active: #fbddff;
     /* --color-top-nav-bg: #f1deff; */
     --color-top-nav-bg: #fff;
     --color-top-nav-text: var(--color-two);

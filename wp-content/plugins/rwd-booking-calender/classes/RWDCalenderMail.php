@@ -43,6 +43,8 @@ class RWDCalenderMail
             trigger_error($error_message, E_USER_ERROR);
         }
 
+        dd($message);
+
     }
 }
 
