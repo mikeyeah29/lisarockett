@@ -25,11 +25,10 @@ class SWPFD_Database
         global $wpdb;
         $table_name = $wpdb->prefix . 'swpfd_form_submission';
 
-        $msg = htmlentities($msg);
+        $msg = sanitize_text_field(addslashes($msg));
 
-        $wpdb->query("
-            INSERT INTO $table_name (to_email, subject, message) VALUES('$to', '$subject', '$msg')
-        ");
+        $query = "INSERT INTO $table_name (to_email, subject, message) VALUES('$to', '$subject', '$msg')";
+        $res = $wpdb->query($query);
     }
 
     public function getData($page = 1, $limit = 100)
@@ -50,6 +49,14 @@ class SWPFD_Database
         $table_name = $wpdb->prefix . 'swpfd_form_submission';
 
         return $wpdb->get_row("SELECT message FROM $table_name WHERE id = $id;");
+    }
+
+    public function deleteEmail($id)
+    {
+        global $wpdb;
+        $table_name = $wpdb->prefix . 'swpfd_form_submission';
+
+        return $wpdb->delete( $table_name, array( 'id' => $id ) );
     }
 }
 

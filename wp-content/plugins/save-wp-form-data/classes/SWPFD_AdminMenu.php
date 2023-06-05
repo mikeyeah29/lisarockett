@@ -32,14 +32,21 @@ class SWPFD_AdminMenu
         $message = '';
         $error = false;
 
-        // if(isset($_GET['page_number']) ) {
-        //     dd('njkn');
-        // }
+        $db = new SWPFD_Database();
+
+        if(isset($_POST['delete_email']) ) {
+            $res = $db->deleteEmail(absint($_POST['email_id']));
+            if(!$res) {
+                $message = 'Something went wrong';
+                $error = true;
+            }else{
+                $message = 'Email Deleted';
+            }
+        }
 
         $pageNumber = (isset($_GET['page_number']) ? $_GET['page_number'] : 1);
         $limit = 200;
 
-        $db = new SWPFD_Database();
         $records = $db->getData($pageNumber, $limit);
 
         $showingFrom = (($pageNumber - 1) * $limit) + 1;

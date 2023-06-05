@@ -14,6 +14,7 @@
                     <th>To</th>
                     <th>Subject</th>
                     <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -33,6 +34,13 @@
                         <td><?php echo $record->subject; ?></td>
                         <td>
                             <a target="_blank" href="/wp-admin/admin.php?page=swpfd-email&email_id=<?php echo $record->id; ?>">View Email</a>
+                        </td>
+                        <td>
+                            <form action="" method="POST">
+                                <input type="hidden" name="delete_email" value="yes" />
+                                <input type="hidden" name="email_id" value="<?php echo $record->id; ?>">
+                                <button type="submit" onclick="return confirm('Are you sure you want to delete this email?')">Delete</button>
+                            </form>
                         </td>
                     </tr>
 

@@ -28,7 +28,7 @@
 
                 <?php if(is_front_page()) { ?>
                     <div class="contact-btn contact-btn--center-self">
-                        <a href="<?php echo home_url(); ?>/book">Book Session</a>
+                        <a href="<?php echo home_url(); ?>/contact">Book Session</a>
                     </div>
                 <?php } ?>
 

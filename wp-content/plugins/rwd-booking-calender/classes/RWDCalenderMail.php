@@ -33,7 +33,10 @@ class RWDCalenderMail
             // 'X-Mailer: PHP/' . phpversion()
         );
 
-        // SWPFD_SaveData::saveMail($to, $subject, htmlspecialchars($message));
+        if(class_exists('SWPFD_SaveData')) {
+            SWPFD_SaveData::saveMail($to, $subject, htmlspecialchars($message));
+        }
+
         $res = wp_mail($to, $subject, $message, $headers);
 
         if (!$res) {

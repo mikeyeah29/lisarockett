@@ -2,7 +2,7 @@
 <?php if(!is_page('contact')) { ?>
 
     <div class="contact-btn contact-btn--floating">
-        <a href="<?php echo home_url(); ?>/book">Book Session</a>
+        <a href="<?php echo home_url(); ?>/contact">Book Session</a>
     </div>
 
 <?php } ?>
