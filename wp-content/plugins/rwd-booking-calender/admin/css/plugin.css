@@ -310,3 +310,18 @@
     vertical-align: top;
     display: inline-block;
 }
+
+.lr-list-item a {
+    padding: 9px 16px;
+    background: #eee;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    display: inline-block;
+    text-decoration: none;
+    color: #333;
+    width: 200px;
+}
+
+.lr-list-item a:hover {
+    background: #e2dfdf;
+}

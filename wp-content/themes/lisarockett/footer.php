@@ -1,5 +1,5 @@
 
-<?php if(!is_page('contact')) { ?>
+<?php if(!is_page('contact') && !is_page('services')) { ?>
 
     <div class="contact-btn contact-btn--floating">
         <a href="<?php echo home_url(); ?>/contact">Book Session</a>

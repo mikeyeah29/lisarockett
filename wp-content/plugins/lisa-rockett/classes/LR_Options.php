@@ -6,7 +6,12 @@ class LR_Options
     {
         $options = get_option('lr_options', [
             'ADMIN_EMAIL' => '',
-            'PHONE' => 'PHONE'
+            'PHONE' => 'PHONE',
+            'BANK_DETAILS_NAME' => '',
+            'BANK_DETAILS_SORT' => '',
+            'BANK_DETAILS_ACCOUNT' => '',
+            'PAYPAL_EMAIL' => '',
+            'SESSION_LENGTH' => '1 Hour'
         ]);
 
         if($option_name) {
@@ -21,7 +26,12 @@ class LR_Options
     {
         update_option('lr_options', [
             'ADMIN_EMAIL' => ( isset($_POST['lr-email']) ? $_POST['lr-email'] : '' ),
-            'PHONE' => ( isset($_POST['lr-phone']) ? $_POST['lr-phone'] : '' )
+            'PHONE' => ( isset($_POST['lr-phone']) ? $_POST['lr-phone'] : '' ),
+            'BANK_DETAILS_NAME' => ( isset($_POST['lr-bank-name']) ? $_POST['lr-bank-name'] : '' ),
+            'BANK_DETAILS_SORT' => ( isset($_POST['lr-bank-sort']) ? $_POST['lr-bank-sort'] : '' ),
+            'BANK_DETAILS_ACCOUNT' => ( isset($_POST['lr-bank-account']) ? $_POST['lr-bank-account'] : '' ),
+            'PAYPAL_EMAIL' => ( isset($_POST['lr-phone']) ? $_POST['lr-paypal-email'] : '' ),
+            'SESSION_LENGTH' => ( isset($_POST['lr-phone']) ? $_POST['lr-session-length'] : '' )
         ]);
     }
 }

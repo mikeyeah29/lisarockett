@@ -118,6 +118,20 @@
     cursor: pointer;
 }
 
+.rwd-form.lr-rwd-form {
+    border: none;
+    padding: none;
+    width: 300px;
+}
+
+.lr-rwd-form .rwd-form-box {
+    padding: 25px;
+    border: 2px solid #CCC;
+    margin: 0 auto;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
 .lr-testimonial {
     background-color: #dcdcdc;
     background-image: url(img/quote.svg);

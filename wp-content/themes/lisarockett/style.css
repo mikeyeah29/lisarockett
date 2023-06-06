@@ -278,7 +278,7 @@ header h1 a:hover {
 .content-section--solid {
 	/* background: var(--color-light);
     padding: 44px 0px; */
-	background: var(--color-one);
+	background: linear-gradient(to right, #351d52, var(--color-two));
 	padding: 80px 0px;
 }
 

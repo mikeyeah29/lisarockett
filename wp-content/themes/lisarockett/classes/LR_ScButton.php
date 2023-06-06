@@ -12,7 +12,7 @@ class LR_ScButton
         $html = '';
 
         $html .= '<div class="contact-btn">';
-            $html .= '<a href="http://dev.lisarockett-wp.com/contact">Contact</a>';
+            $html .= '<a href="' . home_url() . '/contact">' . $attributes['text'] . '</a>';
         $html .= '</div>';
 
         return $html;

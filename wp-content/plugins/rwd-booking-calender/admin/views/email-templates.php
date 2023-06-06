@@ -14,7 +14,7 @@
 
             <div class="rwd-booking-emails">
                 <ul>
-                    <li>Confirmation Email</li>
+                    <li class="lr-list-item"><a href="?page=rwd-booking-email&template=confirmation">Confirmation Email</a></li>
                 </ul>
             </div>
 

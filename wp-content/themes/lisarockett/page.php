@@ -8,14 +8,20 @@
 
 </section>
 
-<div class="lr-page">
+<section class="content-section">
+    <div class="container container-narrow">
+        <?php the_content(); ?>
+    </div>
+</section>
+
+<!-- <div class="lr-page">
 
     <div class="container container-narrow">
 
-        <?php the_content(); ?>
+        <?php // the_content(); ?>
 
     </div>
-</div>
+</div> -->
 
 <?php endwhile; else : ?>
 	<p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
