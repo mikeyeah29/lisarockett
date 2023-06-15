@@ -24,7 +24,8 @@ if(isset($_GET['template'])) {
             '{{bank_details_name}}' => $options['BANK_DETAILS_NAME'],
             '{{bank_details_sort}}' => $options['BANK_DETAILS_SORT'],
             '{{bank_details_account}}' => $options['BANK_DETAILS_ACCOUNT'],
-            '{{zoom_link}}' => $_POST['zoom-link']
+            '{{zoom_link}}' => $_POST['zoom-link'],
+            '{{zoom_password}}' => $_POST['zoom-pass']
         ]);
 
         echo $message;
@@ -59,6 +60,10 @@ if(isset($_GET['template'])) {
             <div class="form-group">
                 <label for="zoom-link">Zoom Link:</label>
                 <input type="text" class="form-control" name="zoom-link" id="zoom-link" value="">
+            </div>
+            <div class="form-group">
+                <label for="zoom-pass">Zoom Password:</label>
+                <input type="text" class="form-control" name="zoom-pass" id="zoom-pass" value="">
             </div>
             <div class="form-group">
                 <label for="total-amount">Total Amount</label>

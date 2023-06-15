@@ -24,7 +24,7 @@
   			<p style="color: #555555;"><b>Duration: </b>{{duration}}</p>
   			<br/>
             <p style="color: #555555;"><b>Payment Details:</b></p>
-            <p style="color: #555555;"><b>Total Amount: </b>{{total_amount}}</p>
+            <p style="color: #555555;"><b>Total Amount: </b>£{{total_amount}}</p>
             <p style="color: #555555;">You can pay either by PayPal by sending the amount to {{paypal_email}} or by bank transfer using the details below.</p>
             <br/>
             <p style="color: #555555;"><b>Name: </b>{{bank_details_name}}</p>
@@ -32,7 +32,8 @@
             <p style="color: #555555;"><b>Account Number: </b>{{bank_details_account}}</p>
   	  		<br/>
             <p style="color: #555555;"><b>Zoom Session Details:</b></p>
-            <p style="color: #555555;"><b>Zoom Link: </b>{{zoom_link}}</p>
+            <p style="color: #555555;"><b>Zoom Link: </b><a href="{{zoom_link}}">{{zoom_link}}</a></p>
+            <p style="color: #555555;"><b>Zoom Password: </b>{{zoom_password}}</p>
             <p style="color: #555555;">Simply click on the provided Zoom meeting link at the scheduled time</p>
             <p style="color: #555555;">I look forward to our session.</p>
             <br/>

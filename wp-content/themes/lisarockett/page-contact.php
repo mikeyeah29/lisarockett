@@ -16,10 +16,10 @@ $form->addFormItem('message', array('type' => 'textarea'));
 if ($form->hasFormSubmited()) {
     if ($form->isValid()) {
 
-        $to = "mikerockett@live.com";
-        $subject = "TESTING LR SITE";
-        $message = "Is it working?";
-        wp_mail( $to, $subject, $message );
+        // $to = "mikerockett@live.com";
+        // $subject = "TESTING LR SITE";
+        // $message = "Is it working?";
+        // wp_mail( $to, $subject, $message );
 
 		try {
 
