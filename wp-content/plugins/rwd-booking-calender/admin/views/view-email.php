@@ -10,6 +10,8 @@ if(isset($_GET['template'])) {
 
     if(isset($_POST['generate_email'])) {
 
+        // echo '<button onclick="copyToClipboard()">Copy HTML</button>';
+
         $options = LR_Options::get();
 
         $html_template = plugin_dir_path( __FILE__ ) . 'emails/' . $templateName . '.html';
@@ -28,7 +30,9 @@ if(isset($_GET['template'])) {
             '{{zoom_password}}' => $_POST['zoom-pass']
         ]);
 
+        echo '<div id="email-html">';
         echo $message;
+        echo '</div>';
 
         $generated = true;
     }
@@ -78,3 +82,27 @@ if(isset($_GET['template'])) {
     </div>
 
 </div>
+
+<script>
+
+function copyToClipboard() {
+  // Get the formatted text content from the element
+  const element = document.getElementById("email-html");
+  const formattedText = element.innerText;
+
+  // Create a temporary textarea element
+  const textarea = document.createElement("textarea");
+  textarea.value = formattedText;
+
+  // Append the textarea to the document
+  document.body.appendChild(textarea);
+
+  // Select and copy the content
+  textarea.select();
+  document.execCommand("copy");
+
+  // Remove the temporary textarea
+  document.body.removeChild(textarea);
+}
+
+</script>
